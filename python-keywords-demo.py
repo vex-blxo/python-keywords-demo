@@ -1,69 +1,61 @@
-# Importing modules (import, from, as)
-import math  # import
-from datetime import datetime as dt  # from, as
+import math  
+from datetime import datetime as dt  
 
 class ExampleClass:
-    # Using class and demonstrating methods
-    def __init__(self, value=None):  # None as default value
+    def __init__(self, value=None): 
         self.value = value
     
     def show_value(self):
         return self.value
 
-def greet(name=None):  # Function updated to use None
-    # Function to demonstrate def, return, if, else, None
-    if name is not None:  # is, None
-        return f"Hello, {name}!"  # return
-    else:  # else
+def greet(name=None): 
+    
+    if name is not None: 
+        return f"Hello, {name}!"  
+    else:  
         return "Hello, Stranger!"
 
 def calculate_square_root(number):
-    # Function to demonstrate assert, global
-    global last_result  # global
-    assert number >= 0, "Number must be positive!"  # assert
+    global last_result  
+    assert number >= 0, "Number must be positive!" 
     last_result = math.sqrt(number)
-    return last_result  # return
+    return last_result  
 
 def loop_example():
-    # Demonstrating for, while, break, continue, and pass
-    for i in range(5):  # for, in
+    for i in range(5): 
         if i == 3:
-            break  # break
+            break
         elif i == 1:
-            continue  # continue
+            continue
         print("Loop iteration:", i)
     
     i = 0
-    while i < 3:  # while
+    while i < 3:
         i += 1
-        pass  # pass
+        pass 
 
 def boolean_demo():
-    # Using and, or, not, True, False
-    x, y = True, False  # True, False
-    if x and not y:  # and, not
+    x, y = True, False  
+    if x and not y: 
         print("Condition met")
-    elif x or y:  # or, elif
+    elif x or y: 
         print("One condition is true")
     else:
         print("No conditions met")
 
 def error_handling():
-    # Using try, except, raise, finally
     try:
-        raise ValueError("Oops! An error occurred")  # raise
-    except ValueError as e:  # except, as
+        raise ValueError("Oops! An error occurred") 
+    except ValueError as e: 
         print("Error caught:", e)
-    finally:  # finally
+    finally: 
         print("This will always run.")
 
 def use_lambda():
-    # Using lambda function
-    square = lambda x: x * x  # lambda
+    square = lambda x: x * x  
     print("Square of 4:", square(4))
 
 def generate_numbers():
-    # Using yield in a generator function
     def number_generator():
         yield 1  # yield
         yield 2
@@ -73,23 +65,20 @@ def generate_numbers():
     print(next(gen))
 
 def modify_variable():
-    # Using nonlocal keyword
     text = "old"
     
     def inner():
-        nonlocal text  # nonlocal
+        nonlocal text  
         text = "new"
     
     inner()
     print("Modified variable:", text)
 
 def file_example():
-    # Using with to handle a file
-    with open("example.txt", "w") as file:  # with, as
+    with open("example.txt", "w") as file:
         file.write("Learning Python keywords!")
 
-# Running functions
-example = ExampleClass("Example Value")  # Using class
+example = ExampleClass("Example Value") 
 print("Class value:", example.show_value())
 
 print(greet("Alice"))
